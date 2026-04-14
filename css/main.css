@@ -1815,11 +1815,11 @@ body {
 
     .gallery-wrapper {
         height: 260px;
-        max-width: 100%;
+        overflow: hidden;
     }
 
     .gallery-card {
-        width: 80%; /* 🔥 hampir full */
+        width: 75%; /* 🔥 hampir full */
     }
 
     /* 🔥 fokus tengah */
@@ -1829,13 +1829,11 @@ body {
 
     /* 🔥 samping cuma dikit (hint) */
     .gallery-card.next {
-        transform: translateX(40%) scale(0.8);
-        opacity: 0.5;
+        transform: translateX(25%) scale(0.8);
     }
 
     .gallery-card.prev {
-        transform: translateX(-140%) scale(0.8);
-        opacity: 0.5;
+        transform: translateX(-125%) scale(0.8);
     }
 
     /* 🔥 sembunyikan jauh */
