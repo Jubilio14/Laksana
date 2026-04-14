@@ -14,7 +14,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
-    background: red;
 }
 
 /* CONTAINER */
@@ -1472,21 +1471,25 @@ body {
         width: 65%; /* 🔥 lebih besar dari desktop */
     }
 
-    /* posisi lebih rapat */
-    .gallery-card.next {
-        transform: translateX(35%) scale(0.85);
+    .gallery-section,
+    .gallery-wrapper {
+        overflow: hidden;
     }
 
     .gallery-card.prev {
-        transform: translateX(-135%) scale(0.85);
-    }
-
-    .gallery-card.far-next {
-        transform: translateX(70%) scale(0.7);
+        transform: translateX(-100%) scale(0.85);
     }
 
     .gallery-card.far-prev {
-        transform: translateX(-170%) scale(0.7);
+        transform: translateX(-130%) scale(0.7);
+    }
+
+    .gallery-card.next {
+        transform: translateX(30%) scale(0.85);
+    }
+
+    .gallery-card.far-next {
+        transform: translateX(60%) scale(0.7);
     }
 
     .location {
@@ -1512,8 +1515,6 @@ body {
     .map-box iframe {
         height: 300px; /* 🔥 lebih pendek */
     }
-
-    @media (max-width: 992px) {
 
     .menu-toggle {
         display: block;
@@ -1592,7 +1593,7 @@ body {
     .footer-contact p {
         font-size: 13px;
     }
-}
+
 }
 
 @media (max-width: 768px) {
