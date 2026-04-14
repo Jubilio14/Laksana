@@ -14,6 +14,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    background: red;
 }
 
 /* CONTAINER */
@@ -1905,7 +1906,7 @@ body {
     }
 
     .footer {
-        padding: 40px 0 20px;
+        padding: 40px 0 10px;
     }
 
     .footer-content {
@@ -1913,6 +1914,14 @@ body {
         align-items: center;
         text-align: center;
         gap: 30px;
+    }
+
+    .footer-contact p:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0;
     }
 
     .footer-left,
@@ -1954,4 +1963,8 @@ body {
         font-size: 12px;
         margin-top: 30px;
     }
+
+    section {
+    overflow: hidden;
+}
 }
