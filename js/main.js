@@ -18,8 +18,8 @@ setInterval(() => {
 
         //fade in
         heroImg.style.opacity = 1;
-    }, 250);
-}, 3500);
+    }, 400);
+}, 2500);
 
 // FADE UP ABOUT US
 const elements = document.querySelectorAll(".fade-up, .fade-scale");

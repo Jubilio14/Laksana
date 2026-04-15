@@ -110,12 +110,12 @@ body {
 /* HOVER & ACTIVE JANGAN ORANGE LAGI ❗ */
 .navbar.scrolled .nav-menu a:hover,
 .navbar.scrolled .nav-menu a.active {
-    color: #660E18; /* tetap putih */
+    color: white; /* tetap putih */
 }
 
 /* GANTI UNDERLINE JADI PUTIH */
 .navbar.scrolled .nav-menu a::after {
-    background: #660E18;
+    background: white;
 }
 
 .navMenu-header {
@@ -303,7 +303,7 @@ body {
 }
 
 .section-desc {
-    color: #5D5D5D;
+    color: #9A9A9A;
     font-size: 18px;
     line-height: 27px;
     font-weight: 400;
@@ -356,7 +356,7 @@ body {
 }
 
 .card-content p {
-    color: #5D5D5D;
+    color: #9A9A9A;
     font-size: 18px;
     line-height: 27px;
     font-weight: 400;
@@ -1038,21 +1038,31 @@ body {
 }
 
 .location-info p {
-    color: #666;
+    color: #9A9A9A;
     margin-bottom: 25px;
     line-height: 1.6;
 }
 
 /* ITEM */
 .location-item {
+    display: flex;              /* 🔥 penting */
+    align-items: flex-start;   /* biar teks panjang tetap rapi */
+    gap: 10px;
+
     margin-bottom: 12px;
     font-size: 15px;
-    color: #444;
+    color: #9a9a9a;
+}
+
+.icon-loc {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0; /* 🔥 dari 4px → 2px */
 }
 
 .location-item a {
     text-decoration: none;
-    color: inherit; /* 🔥 biar warnanya ikut teks */
+    color: inherit;
 }
 
 .location-item a:hover {
