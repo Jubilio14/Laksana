@@ -2241,8 +2241,8 @@ body {
 
     .footer-content {
         flex-direction: column; /* 🔥 stack */
-        align-items: center;
-        text-align: center;
+        align-items: left;
+        text-align: start;
         gap: 30px;
     }
 
@@ -2261,8 +2261,7 @@ body {
     }
 
     .footer-logo {
-        display: block;
-        margin: 0 auto 10px; /* 🔥 center */
+        display: block;/* 🔥 center */
     }
 
     .footer-left p {
@@ -2271,7 +2270,7 @@ body {
 
     /* 🔥 SOCIAL CENTER */
     .socials {
-        justify-content: center;
+        justify-content: start;
     }
 
     .socials a {
