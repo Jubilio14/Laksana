@@ -445,59 +445,67 @@ body {
 }
 
 /* MENU CARD */
+
 .menu-card {
-    flex: 1;
-    min-width: 220px;
-    background: #660E18;
-    color: white;
-    padding: 25px;
+    background: white;
     border-radius: 16px;
-    position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    margin-top: 30px;
-    transform: translateY(0) scale(1);
+    overflow: hidden;
+    flex: 1 1 calc(25% - 20px); 
+    min-width: 0;
+    transition: all 0.3s ease;
+    border: 1px solid #FB8603;
+    color: #333;
 }
 
-.menu-card.highlight {
-    background: #FB8603;
+/* INNER ANIMATION */
+.menu-card .card-inner {
+    transition: transform 0.3s ease;
 }
 
-/* MENU IMAGE FLOAT */
-.menu-card img {
-    width: 250px;
-    position: absolute;
-    top: -75px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
+/* IMAGE */
+.menu-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-/* MENU TEXT */
+/* HOVER IMAGE */
+.menu-card:hover .menu-image img {
+    transform: scale(1.05);
+}
+
+/* CONTENT */
+.menu-card .card-content {
+    padding: 20px;
+}
+
 .menu-card h3 {
-    margin-top: 80px;
-    font-size: 44px;
-    line-height: 66px;
+    margin: 10px 0;
+    color: #FB8603;
     font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.menu-card p {
+    color: #9A9A9A;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: justify;
+}
+
+/* HOVER EFFECT */
+.menu-card:hover .card-inner {
+    transform: translateY(-10px) scale(1.03);
 }
 
 .latin {
     font-family: 'Vartigo', serif !important;
     font-style: italic;
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 400;
-}
-.menu-card p {
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: 400;
-    margin-top: 20px;
-    text-align: justify;
-}
-
-.menu-card:hover {
-    transform: translateY(-10px) scale(1.03) !important;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 }
 
 /* WHY */
@@ -1451,6 +1459,7 @@ body {
 
         -ms-overflow-style: none;
         scrollbar-width: none;
+        padding-bottom: 20px;
     }
 
     .menu-wrapper::-webkit-scrollbar {
@@ -1478,24 +1487,25 @@ body {
     .menu-card {
         flex: 0 0 48%; /* 🔥 2 card */
         max-width: 48%;
-        margin-top: 60px;
         scroll-snap-align: start;
     }
 
-    .menu-card img {
-        width: 204px;
-        top: -60px;
+    .menu-image img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        display: block;
     }
 
     .menu-card h3 {
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 600;
-        line-height: 33px;
+        line-height: 24px;
     }
 
     .latin {
-        font-size: 18px;
-        line-height: 48px;
+        font-size: 14px;
+        line-height: 21px;
         font-weight: 400;
     }
 
@@ -1998,12 +2008,14 @@ body {
         overflow-x: auto;
         gap: 20px;
 
-        padding: 0; /* 🔥 biar center */
-
         scroll-snap-type: x mandatory;
 
         -ms-overflow-style: none;
         scrollbar-width: none;
+
+        padding-bottom: 20px; /* 🔥 biar ga kepotong */
+        padding: 0 10px; /* 🔥 ini kunci */
+
     }
 
     .menu-wrapper::-webkit-scrollbar {
@@ -2011,28 +2023,28 @@ body {
     }
 
     .menu-card {
-        flex: 0 0 100%; /* 🔥 FULL 1 CARD */
+        flex: 0 0 100%; /* 🔥 1 card full */
         max-width: 100%;
-
         scroll-snap-align: center;
-
-        margin-top: 60px; /* 🔥 ruang buat gambar */
     }
 
-    .menu-card img {
-        width: 302px; /* 🔥 lebih gede */
-        top: -100px;
+    /* 🔥 PAKAI INI (BUKAN .menu-card img) */
+    .menu-image img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
     }
 
     .menu-card h3 {
-        font-size: 22px;
-        line-height: 33px;
+        font-size: 16px;
+        line-height: 24px;
         font-weight: 600;
     }
 
     .latin {
-        font-size: 18px;
-        line-height: 48px;
+        font-size: 14px;
+        line-height: 21px;
         font-weight: 400;
     }
 
