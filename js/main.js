@@ -387,3 +387,65 @@ mobileNavLinks.forEach(link => {
 });
 
 
+const menuBtn = document.querySelector(".menu-btn");
+const modal = document.getElementById("menuModal");
+const closeBtn = document.querySelector(".close");
+const panels = document.querySelectorAll(".panel");
+
+// 🔥 buka modal
+menuBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.add("show");
+});
+
+// 🔥 function close (biar rapi)
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+// 🔥 tombol X
+closeBtn.addEventListener("click", closeModal);
+
+// 🔥 klik luar
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+});
+
+// 🔥 ESC
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("show")) {
+        closeModal();
+    }
+});
+
+// expanding panel
+panels.forEach(panel => {
+    panel.addEventListener("click", () => {
+
+        panels.forEach(p => {
+            p.classList.remove("active");
+            p.scrollTop = 0; // reset scroll
+        });
+
+        panel.classList.add("active");
+
+        // 🔥 auto scroll hint
+        setTimeout(() => {
+            panel.scrollTo({
+                top: 60,
+                behavior: "smooth"
+            });
+
+            // balik lagi dikit (biar keliatan "hint")
+            setTimeout(() => {
+                panel.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }, 400);
+
+        }, 300);
+    });
+});
+
+
