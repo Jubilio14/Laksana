@@ -1,25 +1,39 @@
 const images = [
-    "asset/image/IMG_9056.webp",
-    "asset/image/IMG_9186.webp",
-    "asset/image/IMG_9580.webp",
-    "asset/image/IMG_9538.webp"
+    "asset/image/hero1.webp",
+    "asset/image/hero2.webp",
+    "asset/image/hero3.webp",
+    "asset/image/hero4.webp",
+    "asset/image/hero5.webp",
+    "asset/image/hero6.webp"
 ];
 
 let index = 0;
 const heroImg = document.getElementById("hero-img");
 
 setInterval(() => {
-    //fade out
+
+    // 🔥 STEP 1: fade out
     heroImg.style.opacity = 0;
 
     setTimeout(() => {
-        index = (index+1) % images.length;
-        heroImg.src = images[index];
 
-        //fade in
-        heroImg.style.opacity = 1;
-    }, 400);
-}, 2500);
+        const nextIndex = (index + 1) % images.length;
+
+        // 🔥 preload
+        const img = new Image();
+        img.src = images[nextIndex];
+
+        img.onload = () => {
+            index = nextIndex;
+            heroImg.src = images[index];
+
+            // 🔥 STEP 2: fade in
+            heroImg.style.opacity = 1;
+        };
+
+    }, 500); // ⏱ harus sama dengan transition CSS
+
+}, 3000);
 
 // FADE UP ABOUT US
 const elements = document.querySelectorAll(".fade-up, .fade-scale");
