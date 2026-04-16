@@ -575,6 +575,10 @@ body {
     align-items: center; /* 🔥 ini penting */
 }
 
+.menu-slider {
+        display: none;
+}
+
 .panel {
     flex: 1;
     height: 200px;
@@ -1887,41 +1891,37 @@ body {
         height: auto;
     }
 
-    /* modal lebih luas */
-    .menu-modal-content {
-        width: 95%;
-        height: 90%;
-    }
-
-    /* gallery tetap horizontal tapi lebih fleksibel */
     .expanding-gallery {
-        gap: 8px;
-        align-items: center;
+        display: none; /* 🔥 matiin expanding */
     }
 
-    .panel {
-        flex: 1;
-        height: 140px;
-    }
-
-    .panel.active {
-        flex: 4;
-        height: auto; /* 🔥 KUNCI */
-        max-height: 100%;
-        overflow-y: auto;
-        align-items: flex-start;
-    }
-
-    .panel.active img {
+    .menu-slider {
+        display: flex;
         width: 100%;
-        height: auto; /* 🔥 biar full proporsi */
-        object-fit: contain;
+        height: 80vh;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 10px;
+        scroll-behavior: smooth;
     }
 
-    /* non aktif agak gelap */
-    .panel:not(.active) {
-        filter: brightness(0.6);
+    .menu-slider img {
+        flex: 0 0 85%; /* 🔥 ga full biar keliatan next */
+        height: 100%;
+        object-fit: contain;
+
+        border-radius: 20px;
+        background: #111;
+
+        scroll-snap-align: center;
+        transition: transform 0.3s ease;
     }
+
+    .menu-slider img:active {
+        transform: scale(0.97);
+    }   
 
     .footer {
         padding: 50px 0 20px;
@@ -2397,6 +2397,52 @@ body {
         margin-top: 15px;
     }
 
+    .menu-modal-content {
+        height: auto; /* 🔥 jangan dikunci */
+        max-height: 90vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+   .menu-slider {
+        height: 85vh;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .menu-slider .slide {
+        flex: 0 0 92%;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .menu-slider .slide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background-image: inherit;
+        background-size: cover;
+        background-position: center;
+
+        filter: blur(20px);
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+
+    .menu-slider img {
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
     .footer {
         padding: 40px 0 10px;
     }
